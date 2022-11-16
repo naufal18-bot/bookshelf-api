@@ -43,7 +43,7 @@ const addBookHandler = (req, h) => {
 
   books.push(newBook);
 
-  const isSuccess = books.length > 0;
+  const isSuccess = books.filter((book) => book.id === id).length > 0;
 
   if (!isSuccess) {
     const res = h.response({
